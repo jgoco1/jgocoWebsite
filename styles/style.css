@@ -1,7 +1,45 @@
 html {
-    background-color: #ffffff;
+    height: 500px;
+    background-color: darkgrey;/* For browsers that do not support gradients */
+    /*background-image: linear-gradient(to left, lightslategray, darkgray);*/
 }
 
 p {
     line-height: 60%;
 }
+
+
+.button {
+    border: none;
+    color: darkgrey;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: darkgrey;
+    color: black; 
+    border: 2px solid #5204aa;
+  }
+  
+  .button1:hover {
+    background-color: #5204aa;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: darkgrey;
+    color: black; 
+    border: 2px solid #008CBA;
+  }
+  
+  .button2:hover {
+    background-color: #008CBA;
+    color: white;
+  }
