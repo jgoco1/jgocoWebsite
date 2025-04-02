@@ -1,7 +1,39 @@
 html {
-    height: 500px;
-    background-color: darkgrey;/* For browsers that do not support gradients */
-    /*background-image: linear-gradient(to left, lightslategray, darkgray);*/
+    height: 100%; /* Ensure full height */
+    background: linear-gradient(to right, #e0e0e0, #f5f5f5); /* Light gradient for a professional look */
+}
+
+header {
+    background: linear-gradient(to right, #6a0dad, #5204aa); /* Subtle gradient */
+    color: white;
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    font-size: 28px; /* Slightly larger font */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    border-bottom: 3px solid #b400ba;
+}
+
+nav {
+    background: linear-gradient(to right, #6a0dad, #5204aa); /* Purple background color */
+    margin: 20px 0; /* Margin above and below the navigation bar */
+    text-align: center; /* Center the navigation links */
+}
+
+nav a {
+    display: inline-block; /* Ensure consistent button-like appearance */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px; /* Adjust margin for better alignment */
+    padding: 10px 20px; /* Add padding for consistent button size */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover {
+    background-color: #b400ba; /* Highlight on hover */
+    color: white;
+    border-color: #b400ba; /* Match border color on hover */
 }
 
 .button {
@@ -15,26 +47,112 @@ html {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-  }
-  
-  .button1 {
+}
+
+.button1 {
     background-color: darkgrey;
     color: black; 
     border: 2px solid #5204aa;
-  }
-  
-  .button1:hover {
+}
+
+.button1:hover {
     background-color: #5204aa;
     color: white;
-  }
-  
-  .button2 {
-    background-color: darkgrey;
-    color: black; 
+}
+
+.button2 {
+    background-color: rgba(0, 0, 0, 0.63);
+    color: lightskyblue; 
     border: 2px solid #008CBA;
-  }
-  
-  .button2:hover {
+}
+
+.button2:hover {
     background-color: #008CBA;
     color: white;
-  }
+}
+
+.links img {
+    vertical-align: middle; /* Align icons with text */
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.links p {
+    margin: 10px 0; /* Add spacing between links */
+    font-size: 16px; /* Slightly larger font */
+}
+
+.resume {
+    text-align: center; /* Center the content */
+    margin-top: 20px;
+}
+
+.resume .button2 {
+    margin: 10px; /* Add spacing between buttons */
+    font-size: 18px; /* Slightly larger font */
+}
+
+@media (max-width: 768px) {
+    nav a {
+        display: block; /* Stack navigation links */
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 100%; /* Full-width buttons on smaller screens */
+    }
+
+    .links p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Darker text for better readability */
+}
+
+/* Styling for the Experience Section */
+.experience ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.experience li {
+    margin-bottom: 20px; /* Add spacing between job entries */
+}
+
+.experience li strong {
+    color: #333; /* Emphasize job titles */
+    font-size: 18px;
+}
+
+.experience ul ul {
+    margin-top: 10px; /* Add spacing above nested lists */
+    padding-left: 20px; /* Indent nested lists */
+}
+
+.experience ul ul li {
+    font-size: 16px;
+    color: #555; /* Subtle text color for descriptions */
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: #5204aa; /* Match the theme color */
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* Add padding for spacing */
+    font-size: 14px;
+    border-top: 3px solid #b400ba; /* Add a border for separation */
+}
+
+footer a {
+    color: lightgray;
+    text-decoration: none;
+    margin: 0 10px; /* Add spacing between links */
+}
+
+footer a:hover {
+    color: white; /* Highlight links on hover */
+}

@@ -1,29 +1,83 @@
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<link href="styles/style.css" rel="stylesheet" />
-
-<meta name="viewport" content="width=device-width" />    
-<title>John Goco's Web Portfolio!</title>
-<nav class="menu"> <a href = "index.html"><button class="button button1">Home</button></a> 
-  <a href="coursework.html"><button class="button button1">Coursework</button></a> </nav>
-
 <head>
-    <h1>John Goco's Website and Portfolio</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Goco's Web Portfolio!</title>
+    <link href="styles/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <a>Welcome to my website, we are currently &#x1F477 under construction &#x1F477 but if you'd like to learn more about me or see my portfolio you can do so below!</a>
-    <p> <img src = "images/linkedinlogo.png" height = "13" alt="LinkedIn Logo" />LinkedIn: <a href = https://www.linkedin.com/in/john-goco-030526229>My LinkedIn!</a></p>
-    <p> <img src = "images/githublogo.png" height = "13" alt="Github Logo" />Github: <a href = https://github.com/jgoco1>My Github!</a></p>
-    <p>My Resume: 
-    <ul>
-        <li><a href="downloads/jgocoResume.docx">jgocoResume.docx</a></li>
-        <li><a href="downloads/jgocoResume.pdf">jgocoResume.pdf</a></li>
-    </ul></p>
+    <header>
+        <nav class="menu">
+            <a href = "index.html">
+                <button class = "button button1">Home</button>
+            </a>
+            <a href = "coursework.html">
+                <button class = "button button1">Coursework</button>
+            </a>
+        </nav>
+        <h1>John Goco's Website and Portfolio</h1>
+    </header>
 
-  <body>
-    <!--<img src="images/Portrait1.jpg" alt="Portrait of myself" />-->
-  </body>
+    <main>
+        <p>Welcome to my professional portfolio! Here, you can explore my projects, learn about my skills, and connect with me.</p>
+        
+        <!-- About Me Section -->
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I hold a Bachelor's degree in Computer Science with a minor in Economics from the University of Maryland, Baltimore County (UMBC). My academic background has equipped me with a strong foundation in programming, problem-solving, and analytical thinking.</p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience">
+            <h2>Professional Experience</h2>
+            <ul>
+                <li>
+                    <strong>Client Services Intern</strong> - Maryland Department of IT (May 2023 - May 2024)
+                    <ul>
+                        <li>Performed vulnerability remediation and detection using tools such as Tenable and Tanium.</li>
+                        <li>Led the Windows 10 Vulnerability Remediation project, focusing on reimaging machines for state agencies, including the Department of Agriculture and Department of Natural Resources.</li>
+                        <li>Provided remote IT support using BomGar, including remote software and OS updates.</li>
+                        <li>Delivered remediation training to apprentices to improve their technical skills.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Cryptocurrency Specialist Intern</strong> - Talen Energy (Summer 2022)
+                    <ul>
+                        <li>Assisted in establishing the Nautilus Cryptomine, powered by the Susquehanna nuclear plant, to produce 300 MW of Bitcoin mining capacity.</li>
+                        <li>Facilitated communication between contractors and stakeholders involved in the Cumulus Campus project.</li>
+                        <li>Used networking tools to prepare equipment for the Nautilus campus and assisted in testing and setting up Antminers and other Cryptomine equipment.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="links">
+            <p>
+                <img src="images/linkedinlogo.png" height="20" alt="LinkedIn Logo"> 
+                <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">Connect with me on LinkedIn</a>
+            </p>
+            <p>
+                <img src="images/githublogo.png" height="20" alt="Github Logo"> 
+                <a href="https://github.com/jgoco1" target="_blank">Explore my GitHub projects</a>
+            </p>
+        </section>
+        <hr>
+        <section class="resume">
+            <p>Download my resume to learn more about my professional experience and skills:</p>
+            <a href="downloads/jgocoResume.docx" class="button button2">Download as .docx</a>
+            <a href="downloads/jgocoResume.pdf" class="button button2">Download as .pdf</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 John Goco. All rights reserved.</p>
+        <p>
+            <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> | 
+            <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/jgoco1" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
 </html>
