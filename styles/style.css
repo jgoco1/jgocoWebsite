@@ -36,6 +36,7 @@ nav a:hover {
     border-color: #b400ba; /* Match border color on hover */
 }
 
+
 .button {
     border: none;
     color: darkgrey;
@@ -138,13 +139,34 @@ body {
     margin-bottom: 5px;
 }
 
+ul {
+    margin: 20px 0;
+    padding: 0 20px;
+    list-style-type: disc; /* Use bullets for lists */
+}
+
+ul li {
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
+h1, h2 {
+    text-align: center; /* Center-align headings */
+    color: white; /* Match the theme color */
+}
+
+h2 {
+    text-align: left; /* Align all <h2> elements to the left */
+    color: #5204aa; /* Optional: Keep the theme color */
+    margin-top: 20px; /* Add spacing above the headings */
+}
+
 footer {
     background-color: #5204aa; /* Match the theme color */
     color: white;
     text-align: center;
-    padding: 15px 0; /* Add padding for spacing */
+    padding: 15px 0;
     font-size: 14px;
-    border-top: 3px solid #b400ba; /* Add a border for separation */
+    border-top: 3px solid #b400ba;
 }
 
 footer a {
