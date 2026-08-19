@@ -1,180 +1,199 @@
-html {
-    height: 100%; /* Ensure full height */
-    background: linear-gradient(to right, #e0e0e0, #f5f5f5); /* Light gradient for a professional look */
+:root{
+  --turf-dark:#0c0a1a;
+  --turf:#181030;
+  --turf-panel:#20183d;
+  --turf-line:#3c2f66;
+  --chalk:#f2eee1;
+  --chalk-dim:#b3a9c9;
+  --gold:#c9a227;
+  --gold-dim:#8a6a1c;
+  --brick:#c60c30;
+  --green-ok:#5fae7c;
+  --accent-text:#241a04;
+  --accent-hover:#e0c15c;
+}
+*{box-sizing:border-box;}
+html{height:100%;}
+body{
+  margin:0;
+  background:var(--turf-dark);
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,0.25), transparent 220px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 64px);
+  color:var(--chalk);
+  font-family:'Inter',sans-serif;
+  min-height:100%;
+  padding:0 0 4rem;
+  line-height:1.6;
+}
+a{color:var(--gold);}
+
+header{
+  padding:2.75rem 1.5rem 1.5rem;
+  max-width:900px;
+  margin:0 auto;
+  border-bottom:1px solid var(--turf-line);
+}
+.eyebrow{
+  font-family:'Space Mono',monospace;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-size:12px;
+  color:var(--gold);
+  margin:0 0 0.5rem;
+}
+h1{
+  font-family:'Anton',sans-serif;
+  font-weight:400;
+  letter-spacing:0.02em;
+  font-size:clamp(2rem,5.5vw,3.1rem);
+  margin:0 0 0.4rem;
+  line-height:0.95;
+  text-transform:uppercase;
+  color:var(--chalk);
+}
+.sub{
+  color:var(--chalk-dim);
+  font-size:14.5px;
+  max-width:62ch;
+  margin:0 0 1.25rem;
+  line-height:1.6;
 }
 
-header {
-    background: linear-gradient(to right, #6a0dad, #5204aa); /* Subtle gradient */
-    color: white;
-    padding: 20px; /* Add padding for spacing */
-    text-align: center;
-    font-size: 28px; /* Slightly larger font */
-    font-family: 'Roboto', sans-serif; /* Use a modern font */
-    border-bottom: 3px solid #b400ba;
+nav.menu{display:flex; gap:0.5rem; flex-wrap:wrap; max-width:900px; margin:0 auto; padding:0 1.5rem;}
+nav.menu a{text-decoration:none;}
+nav.menu .button, nav.menu button{
+  font-family:'Space Mono',monospace;
+  font-size:12.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  background:transparent;
+  color:var(--chalk-dim);
+  border:1px solid var(--turf-line);
+  padding:0.55rem 0.9rem;
+  border-radius:4px;
+  cursor:pointer;
+  transition:background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+nav.menu .button:hover, nav.menu button:hover{
+  background:var(--gold); color:var(--accent-text); border-color:var(--gold);
+}
+nav.menu .button.active, nav.menu button.active{
+  background:var(--gold); color:var(--accent-text); border-color:var(--gold); font-weight:700;
 }
 
-nav {
-    background: linear-gradient(to right, #6a0dad, #5204aa); /* Purple background color */
-    margin: 20px 0; /* Margin above and below the navigation bar */
-    text-align: center; /* Center the navigation links */
+@media (max-width:600px){
+  nav.menu{gap:0.4rem;}
+  nav.menu .button, nav.menu button{font-size:11px; padding:0.45rem 0.6rem;}
 }
 
-nav a {
-    display: inline-block; /* Ensure consistent button-like appearance */
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 10px; /* Adjust margin for better alignment */
-    padding: 10px 20px; /* Add padding for consistent button size */
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+main{max-width:900px; margin:0 auto; padding:1.75rem 1.5rem 0;}
+
+h2.section-title, section > h2, main > h2{
+  font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase;
+  font-size:22px; letter-spacing:0.01em; margin:0 0 1rem; color:var(--chalk);
+}
+h2{
+  font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase;
+  font-size:22px; letter-spacing:0.01em; margin:1.5rem 0 1rem; color:var(--chalk);
+}
+h3{
+  font-family:'Space Mono',monospace; font-weight:700; text-transform:uppercase;
+  font-size:12px; letter-spacing:0.1em; color:var(--gold);
+  margin:1.25rem 0 0.6rem;
+}
+h4{
+  font-family:'Space Mono',monospace; font-weight:700; text-transform:none;
+  font-size:13px; letter-spacing:0.02em; color:var(--chalk-dim);
+  margin:1rem 0 0.35rem;
 }
 
-nav a:hover {
-    background-color: #b400ba; /* Highlight on hover */
-    color: white;
-    border-color: #b400ba; /* Match border color on hover */
+.card{
+  background:var(--turf-panel); border:1px solid var(--turf-line); border-radius:6px;
+  padding:1.1rem 1.25rem 1.25rem; margin-bottom:1.25rem;
 }
+.card + hr, main > hr{display:none;}
 
-
-.button {
-    border: none;
-    color: darkgrey;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+.button, button, a.button{
+  font-family:'Space Mono',monospace;
+  border:none;
+  color:var(--accent-text);
+  background:var(--gold);
+  padding:0.65rem 1.1rem;
+  text-align:center;
+  text-decoration:none;
+  display:inline-block;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  border-radius:4px;
+  margin:4px 4px 4px 0;
+  cursor:pointer;
+  transition:background-color 0.2s ease, color 0.2s ease;
 }
+.button:hover, button:hover, a.button:hover{background:var(--accent-hover);}
 
-.button1 {
-    background-color: darkgrey;
-    color: black; 
-    border: 2px solid #5204aa;
+.button2, a.button2{
+  background:transparent; color:var(--gold); border:1px solid var(--gold-dim);
 }
+.button2:hover, a.button2:hover{background:rgba(201,162,39,0.12); color:var(--accent-hover);}
 
-.button1:hover {
-    background-color: #5204aa;
-    color: white;
-}
+.links img{vertical-align:middle; margin-right:10px;}
+.links p{margin:10px 0; font-size:16px;}
 
-.button2 {
-    background-color: rgba(0, 0, 0, 0.63);
-    color: lightskyblue; 
-    border: 2px solid #008CBA;
-}
+.resume{text-align:center; margin-top:1.5rem;}
+.resume .button2{margin:10px; font-size:14px;}
 
-.button2:hover {
-    background-color: #008CBA;
-    color: white;
-}
-
-.links img {
-    vertical-align: middle; /* Align icons with text */
-    margin-right: 10px; /* Add space between icon and text */
-}
-
-.links p {
-    margin: 10px 0; /* Add spacing between links */
-    font-size: 16px; /* Slightly larger font */
-}
-
-.resume {
-    text-align: center; /* Center the content */
-    margin-top: 20px;
-}
-
-.resume .button2 {
-    margin: 10px; /* Add spacing between buttons */
-    font-size: 18px; /* Slightly larger font */
-}
-
-@media (max-width: 768px) {
-    nav a {
-        display: block; /* Stack navigation links */
-        margin: 10px 0;
-    }
-
-    .button {
-        width: 100%; /* Full-width buttons on smaller screens */
-    }
-
-    .links p {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333; /* Darker text for better readability */
+@media (max-width:768px){
+  .button{width:100%; margin:4px 0;}
+  .links p{font-size:14px;}
 }
 
 /* Styling for the Experience Section */
-.experience ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0;
-}
+.experience ul{list-style-type:none; padding:0;}
+.experience li{margin-bottom:20px;}
+.experience li strong{color:var(--chalk); font-size:15px; font-family:'Space Mono',monospace;}
+.experience ul ul{margin-top:10px; padding-left:20px;}
+.experience ul ul li{font-size:14.5px; color:var(--chalk-dim); margin-bottom:6px;}
 
-.experience li {
-    margin-bottom: 20px; /* Add spacing between job entries */
-}
+ul{margin:20px 0; padding:0 20px; list-style-type:disc;}
+ul li{margin-bottom:10px;}
 
-.experience li strong {
-    color: #333; /* Emphasize job titles */
-    font-size: 18px;
-}
+main a{color:var(--gold); text-decoration:underline; text-decoration-color:var(--gold-dim);}
+main a:hover{color:var(--accent-hover);}
 
-.experience ul ul {
-    margin-top: 10px; /* Add spacing above nested lists */
-    padding-left: 20px; /* Indent nested lists */
+footer{
+  max-width:900px; margin:2.5rem auto 0; padding:0 1.5rem;
+  color:var(--chalk-dim); font-size:12.5px; line-height:1.7;
+  border-top:1px solid var(--turf-line); padding-top:1.25rem;
+  text-align:center;
 }
+footer a{color:var(--gold); text-decoration:none; margin:0 10px;}
+footer a:hover{color:var(--accent-hover);}
 
-.experience ul ul li {
-    font-size: 16px;
-    color: #555; /* Subtle text color for descriptions */
-    margin-bottom: 5px;
+/* ---- Theme picker ---- */
+.theme-picker{
+  position:fixed; top:0.85rem; right:0.85rem; z-index:40;
+  display:flex; align-items:center; gap:0.4rem;
+  background:var(--turf-panel); border:1px solid var(--turf-line); border-radius:6px;
+  padding:0.4rem 0.6rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
 }
-
-ul {
-    margin: 20px 0;
-    padding: 0 20px;
-    list-style-type: disc; /* Use bullets for lists */
+.theme-picker label{
+  font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--chalk-dim); white-space:nowrap;
 }
-
-ul li {
-    margin-bottom: 10px; /* Add spacing between list items */
+.theme-picker select{
+  font-family:'Space Mono',monospace;
+  background:var(--turf); border:1px solid var(--turf-line); color:var(--chalk);
+  padding:0.3rem 0.5rem; font-size:12px; border-radius:4px; width:auto;
 }
+.theme-picker select:focus{outline:2px solid var(--gold); outline-offset:1px;}
 
-h1, h2 {
-    text-align: center; /* Center-align headings */
-    color: white; /* Match the theme color */
-}
-
-h2 {
-    text-align: left; /* Align all <h2> elements to the left */
-    color: #5204aa; /* Optional: Keep the theme color */
-    margin-top: 20px; /* Add spacing above the headings */
-}
-
-footer {
-    background-color: #5204aa; /* Match the theme color */
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 14px;
-    border-top: 3px solid #b400ba;
-}
-
-footer a {
-    color: lightgray;
-    text-decoration: none;
-    margin: 0 10px; /* Add spacing between links */
-}
-
-footer a:hover {
-    color: white; /* Highlight links on hover */
+@media (max-width:600px){
+  .theme-picker{
+    position:static; width:fit-content; box-shadow:none;
+    margin:0.75rem 0 0 1.5rem;
+  }
 }

@@ -1,15 +1,45 @@
 <!doctype html>
 <html lang="en-US">
-<link href="styles/style.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width" />    
-<title>John Goco's Web Portfolio!</title>
-<nav class="menu"> <a href = "index.html"><button class="button button1">Home</button></a> 
-    <a href="coursework.html"><button class="button button1">Coursework</button></a> </nav>
 <head>
-CMSC 447
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Goco's Web Portfolio!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet" />
 </head>
-
 <body>
-    <p>In this course I worked in a group of 5 to develop a game to raise awareness of deforestation. The game was a simple idle game similar to cookie clicker which had the user watering and growing trees. Other team members were Kate Martinez, Michael Maiden, Agransh Srivastava, and Shane Taylor</p>
-    <p><a href = https://sbtaylor13.github.io/FarmTown>Test the game here!</a></p>
+  <div class="theme-picker">
+    <label for="themeSelect">Theme</label>
+    <select id="themeSelect"></select>
+  </div>
+
+  <header>
+    <p class="eyebrow">Coursework</p>
+    <h1>CMSC 447</h1>
+    <nav class="menu">
+      <a href="index.html"><button class="button">Home</button></a>
+      <a href="coursework.html"><button class="button active">Coursework</button></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <p>In this course I worked in a group of 5 to develop a game to raise awareness of deforestation. The game was a simple idle game similar to cookie clicker which had the user watering and growing trees. Other team members were Kate Martinez, Michael Maiden, Agransh Srivastava, and Shane Taylor.</p>
+      <p><a href="https://sbtaylor13.github.io/FarmTown">Test the game here!</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 John Goco. All rights reserved.</p>
+    <p>
+      <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> |
+      <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/jgoco1" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="styles/theme.js"></script>
 </body>
+</html>

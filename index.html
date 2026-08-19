@@ -4,36 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Goco's Web Portfolio!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <div class="theme-picker">
+        <label for="themeSelect">Theme</label>
+        <select id="themeSelect"></select>
+    </div>
+
     <header>
-        <nav class="menu">
-            <a href = "index.html">
-                <button class = "button button1">Home</button>
-            </a>
-            <a href = "coursework.html">
-                <button class = "button button1">Coursework</button>
-            </a>
-            <a href= "web demo/atatsteroids_web_demo.html">
-                <button class = "button button1">Project</button>
-            </a>
-        </nav>
+        <p class="eyebrow">Portfolio &amp; Resume</p>
         <h1>John Goco's Website and Portfolio</h1>
+        <nav class="menu">
+            <a href="index.html"><button class="button active">Home</button></a>
+            <a href="coursework.html"><button class="button">Coursework</button></a>
+            <a href="web demo/atatsteroids_web_demo.html"><button class="button">Project</button></a>
+        </nav>
     </header>
 
     <main>
-        <p>Welcome to my professional portfolio! Here, you can explore my projects, learn about my skills, and connect with me.</p>
-        
+        <p class="sub">Welcome to my professional portfolio! Here, you can explore my projects, learn about my skills, and connect with me.</p>
+
         <!-- About Me Section -->
-        <section class="about">
+        <section class="about card">
             <h2>About Me</h2>
             <p>I hold a Bachelor's degree in Computer Science with a minor in Economics from the University of Maryland, Baltimore County (UMBC). My academic background has equipped me with a strong foundation in programming, problem-solving, and analytical thinking.</p>
         </section>
-        <hr>
+
         <!-- Experience Section -->
-        <section class="experience">
+        <section class="experience card">
             <h2>Professional Experience</h2>
             <ul>
                 <li>
@@ -55,8 +58,8 @@
                 </li>
             </ul>
         </section>
-        <hr>
-        <section class="resume">
+
+        <section class="resume card">
             <p>Download my resume to learn more about my professional experience and skills:</p>
             <a href="downloads/jgocoResume.docx" class="button button2">Download as .docx</a>
             <a href="downloads/jgocoResume.pdf" class="button button2">Download as .pdf</a>
@@ -66,10 +69,12 @@
     <footer>
         <p>&copy; 2025 John Goco. All rights reserved.</p>
         <p>
-            <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> | 
-            <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> | 
+            <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> |
+            <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> |
             <a href="https://github.com/jgoco1" target="_blank">GitHub</a>
         </p>
     </footer>
+
+    <script src="styles/theme.js"></script>
 </body>
 </html>

@@ -1,72 +1,94 @@
 <!doctype html>
 <html lang="en-US">
-<link href="styles/style.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width" />    
-<title>John Goco's Web Portfolio!</title>
-<nav class="menu"> <a href = "index.html"><button class="button button1">Home</button></a> 
-    <a href="coursework.html"><button class="button button1">Coursework</button></a> </nav>
 <head>
-CMSC 436
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Goco's Web Portfolio!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet" />
 </head>
-
-
-<h1>Data Visualization Individual Portfolio:</h1>
 <body>
+  <div class="theme-picker">
+    <label for="themeSelect">Theme</label>
+    <select id="themeSelect"></select>
+  </div>
 
+  <header>
+    <p class="eyebrow">Coursework</p>
+    <h1>CMSC 436</h1>
+    <p class="sub">Data Visualization Individual Portfolio</p>
+    <nav class="menu">
+      <a href="index.html"><button class="button">Home</button></a>
+      <a href="coursework.html"><button class="button active">Coursework</button></a>
+    </nav>
+  </header>
 
-    <h2>Chapter 8 & 9: Maps & Networks</h2>
-    <h3>Curation + Reflection</h3>
+  <main>
+    <section class="card">
+      <h2>Chapter 8 &amp; 9: Maps &amp; Networks</h2>
+      <h3>Curation + Reflection</h3>
+      <h4>Why did you choose this item to include in your portfolio?</h4>
+      <p>I chose to include maps and networks in my portfolio since I feel they are some of the most widely applicable visualizations, and because in my previous semester I took a course focused on GIS which gave me more experience generating visualizations using maps.</p>
+      <h4>What did you learn from doing this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead?</h4>
+      <p>I learned about a few new types of map visualizations that I had not previously used, like contiguous cartigrams, and about some newer projections which address the misrepresentations from projecting onto a 2D plane better than previous projections I had used. The AuthaGraph shown in class was very interesting to me and I wish I had been able to use it in my semester project, but due to the complexities of mapping GPS coordinates onto it we were unable to.</p>
+      <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
+      <p>The most useful technique from this section was learning how to choose projections in a way that minimizes misrepresentations of data, which will be useful anytime I am either reading or generating a map.</p>
+      <h4>Anything that sparked your curiosity, or other interesting revelations?</h4>
+      <p>I'm curious to see more visualizations which make use of the AuthaGraph projection, since it seems like such a novel projection to me.</p>
+    </section>
+
+    <section class="card">
+      <h2>Misleading Vis</h2>
+      <p><img src="images/misleading.png" style="max-width:100%; height:auto; border-radius:6px;" alt="Map showing a misleading visualization" /></p>
+      <h3>Refinements/Extensions</h3>
+      <h4>Why did you choose this item to refine/extend?</h4>
+      <p>I thought exploring how to make a vis subtly misleading could be fun, one that you have to really look close at to figure out it's misleading but that makes huge misrepresentations of real data.</p>
+      <h4>What did you learn from refining this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead?</h4>
+      <p>I learned how easily someone could mistakenly make a misleading vis, and how easy it is to turn what would be an informational one into a misleading one, which could be done accidentally or maliciously.</p>
+      <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
+      <p>I can use these concepts to develop better visualizations in the future and to avoid making easy mistakes that can cause a miscommunication by my audience.</p>
+      <h4>Anything that sparked your curiosity, or other interesting revelations?</h4>
+      <p>I'm curious as to how often misleading visualizations are used on purpose to further an agenda, compared to how often they are used by accident.</p>
+    </section>
+
+    <section class="card">
+      <h2>Marks &amp; Channels</h2>
+      <h3>Refinements/Extensions</h3>
+      <h4>Why did you choose this item to refine/extend?</h4>
+      <p>I felt that marks and channels were one of the concepts I best understood in the course and that the provided a good summary of how to read into visualizations.</p>
+      <h4>What did you learn from refining this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead?</h4>
+      <p>I learned about how many attributed are encoded and how the ways to effectively encode attributes differs greatly based on what the intention is and what is being displayed.</p>
+      <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
+      <p>I can use these concepts to interpret visualizations I see outside of class and to think more critically about how I generate my own visuals.</p>
+      <h4>Anything that sparked your curiosity, or other interesting revelations?</h4>
+      <p>I'm curious how long marks and channels have been the predominate way of interpreting visualizations and what caused that line of thought to become widespread.</p>
+    </section>
+
+    <section class="card">
+      <h2>Assignment 1</h2>
+      <h3>Curation + Reflection</h3>
+      <h4>Why did you choose this item to include in your portfolio?</h4>
+      <p>I felt that this was one of the activities we did that would best show how my knowledge of visualizations developed through the course, since my background was more limitted when we did this assignment.</p>
+      <h4>What did you learn from doing this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead?</h4>
+      <p>I learned how difficult it can be to learn new visualization tools, and some steps to take to generate a tutorial which effectively teaches how to use new tools.</p>
+      <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
+      <p>If I am in a position to teach new users how to begin using a tool or piece of software my experience in this assignment will assist with that.</p>
+      <h4>Anything that sparked your curiosity, or other interesting revelations?</h4>
+      <p>I am curious how other people go about generating their tutorials for new tools, and what practices could assist in creating effective tutorials.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 John Goco. All rights reserved.</p>
     <p>
-        <h4>Why did you choose this item to include in your portfolio?</h4>
-            I chose to include maps and networks in my portfolio since I feel they are some of the most widely applicable visualizations, and because in my previous semester I took a course focused on GIS which gave me more experience generating visualizations using maps.
-        <h4>What did you learn from doing this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead? </h4>
-            I learned about a few new types of map visualizations that I had not previously used, like contiguous cartigrams, and about some newer projections which address the misrepresentations from projecting onto a 2D plane better than previous projections I had used. The AuthaGraph shown in class was very interesting to me and I wish I had been able to use it in my semester project, but due to the complexities of mapping GPS coordinates onto it we were unable to.
-        <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
-            The most useful technique from this section was learning how to choose projections in a way that minimizes misrepresentations of data, which will be useful anytime I am either reading or generating a map.
-        <h4>Anything that sparked your curiosity, or other interesting revelations? </h4>
-            I'm curious to see more visualizations which make use of the AuthaGraph projection, since it seems like such a novel projection to me.
+      <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> |
+      <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/jgoco1" target="_blank">GitHub</a>
     </p>
+  </footer>
 
-
-    <h2>Misleading Vis</h2>
-    <img src = "images/misleading.png" width = 1000 alt="Map showing a misleading visualization" />
-    <h3>Refinements/Extensions</h3>
-    <p>
-        <h4>Why did you choose this item to refine/extend? </h4>
-            I thought exploring how to make a vis subtly misleading could be fun, one that you have to really look close at to figure out it's misleading but that makes huge misrepresentations of real data
-        <h4>What did you learn from refining this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead? </h4>
-            I learned how easily someone could mistakenly make a misleading vis, and how easy it is to turn what would be an informational one into a misleading one, which could be done accidentally or maliciously. 
-        <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
-            I can use these concepts to develop better visualizations in the future and to avoid making easy mistakes that can cause a miscommunication by my audience.
-        <h4>Anything that sparked your curiosity, or other interesting revelations?</h4>
-        I'm curious as to how often misleading visualizations are used on purpose to further an agenda, compared to how often they are used by accident.
-    </p>
-
-
-    <h2>Marks & Channels</h2>
-    <h3>Refinements/Extensions</h3>
-    <p>
-        <h4>Why did you choose this item to refine/extend? </h4>
-        I felt that marks and channels were one of the concepts I best understood in the course and that the provided a good summary of how to read into visualizations.
-        <h4>What did you learn from refining this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead? </h4>
-        I learned about how many attributed are encoded and how the ways to effectively encode attributes differs greatly based on what the intention is and what is being displayed.
-        <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
-        I can use these concepts to interpret visualizations I see outside of class and to think more critically about how I generate my own visuals.
-        <h4>Anything that sparked your curiosity, or other interesting revelations?</h4>
-        I'm curious how long marks and channels have been the predominate way of interpreting visualizations and what caused that line of thought to become widespread.
-    </p>
-
-
-    <h2>Assignment 1</h2>
-    <h3>Curation + Reflection</h3>
-    <p>
-        <h4>Why did you choose this item to include in your portfolio?</h4>
-            I felt that this was one of the activities we did that would best show how my knowledge of visualizations developed through the course, since my background was more limitted when we did this assignment
-        <h4>What did you learn from doing this activity/assignment? Anything that surprised or dismayed you? If you learned nothing, what kind of activity/assignment would facilitate learning for you instead? </h4>
-            I learned how difficult it can be to learn new visualization tools, and some steps to take to generate a tutorial which effectively teaches how to use new tools.
-        <h4>How might you use these concepts/techniques outside of class (in your research, daily life, job, hobby, etc.)?</h4>
-            If I am in a position to teach new users how to begin using a tool or piece of software my experience in this assignment will assist with that.
-        <h4>Anything that sparked your curiosity, or other interesting revelations? </h4>
-            I am curious how other people go about generating their tutorials for new tools, and what practices could assist in creating effective tutorials.
-    </p>
+  <script src="styles/theme.js"></script>
 </body>
+</html>
