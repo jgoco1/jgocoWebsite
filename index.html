@@ -23,6 +23,7 @@
             <a href="index.html"><button class="button active">Home</button></a>
             <a href="coursework.html"><button class="button">Coursework</button></a>
             <a href="web demo/atatsteroids_web_demo.html"><button class="button">Project</button></a>
+            <a href="/cfb/"><button class="button">CFB Pool</button></a>
         </nav>
     </header>
 
@@ -67,7 +68,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 John Goco. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> John Goco. All rights reserved.</p>
         <p>
             <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> |
             <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> |
@@ -76,5 +77,6 @@
     </footer>
 
     <script src="styles/theme.js?v=1787099545"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
