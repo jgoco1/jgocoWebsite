@@ -155,7 +155,7 @@ h4{
   display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
   gap:0.5rem 1rem; margin-bottom:0.6rem;
 }
-.pack-head h2{margin:0;}
+.pack-head h2{margin:0; flex:1;}
 .pack-head .button{margin:0; white-space:nowrap;}
 .pack-card p{margin:0.5rem 0;}
 .pack-card ul{margin:0.5rem 0;}
@@ -164,6 +164,30 @@ main code{
   font-family:'Space Mono',monospace; font-size:0.9em;
   background:var(--turf); border:1px solid var(--turf-line); border-radius:3px;
   padding:0.1em 0.35em;
+}
+
+.pack-check{
+  display:inline-flex; align-items:center; gap:0.5rem; cursor:pointer;
+  font-family:'Space Mono',monospace; font-size:12px; color:var(--chalk-dim);
+  text-transform:uppercase; letter-spacing:0.04em;
+}
+.pack-check input[type="checkbox"]{
+  width:16px; height:16px; accent-color:var(--gold); cursor:pointer; margin:0;
+}
+.bulk-bar{
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+  gap:0.75rem 1rem; position:sticky; top:0.75rem; z-index:20;
+}
+.bulk-bar-left{display:flex; align-items:center; gap:1rem; flex-wrap:wrap;}
+.bulk-count{
+  font-family:'Space Mono',monospace; font-size:12px; color:var(--chalk-dim);
+  letter-spacing:0.04em;
+}
+#bulkDownloadBtn:disabled{opacity:0.45; cursor:default;}
+#bulkDownloadBtn:disabled:hover{background:var(--gold);}
+
+@media (max-width:600px){
+  .bulk-bar{position:static;}
 }
 
 /* Styling for the Experience Section */

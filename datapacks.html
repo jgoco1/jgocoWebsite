@@ -30,8 +30,22 @@
     <main>
       <p class="sub">Nine standalone Minecraft datapacks I've made, built for 1.21.x (data pack format matching Minecraft 26.2). Each one is self-contained — drop any combination into your world's <code>datapacks</code> folder and run <code>/reload</code>. No dependencies between them except where noted.</p>
 
+      <div class="bulk-bar card" id="bulkBar">
+        <div class="bulk-bar-left">
+          <label class="pack-check">
+            <input type="checkbox" id="selectAll" aria-label="Select all datapacks">
+            <span>Select all</span>
+          </label>
+          <span class="bulk-count" id="bulkCount">0 selected</span>
+        </div>
+        <button type="button" class="button" id="bulkDownloadBtn" disabled>Download Selected</button>
+      </div>
+
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/tnt_campfire_pack.zip" data-name="tnt_campfire_pack" aria-label="Select TNT / Campfire / Blaze / Concrete Recipe Tweaks">
+          </label>
           <h2>TNT / Campfire / Blaze / Concrete Recipe Tweaks</h2>
           <a href="downloads/datapacks/tnt_campfire_pack.zip" class="button button2">Download .zip</a>
         </div>
@@ -47,6 +61,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/fishing_treasure_boost.zip" data-name="fishing_treasure_boost" aria-label="Select Fishing Treasure Boost">
+          </label>
           <h2>Fishing Treasure Boost</h2>
           <a href="downloads/datapacks/fishing_treasure_boost.zip" class="button button2">Download .zip</a>
         </div>
@@ -60,6 +77,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/fishing_barrels.zip" data-name="fishing_barrels" aria-label="Select Fishing Barrels">
+          </label>
           <h2>Fishing Barrels</h2>
           <a href="downloads/datapacks/fishing_barrels.zip" class="button button2">Download .zip</a>
         </div>
@@ -73,6 +93,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/campfire_aura.zip" data-name="campfire_aura" aria-label="Select Campfire Aura">
+          </label>
           <h2>Campfire Aura</h2>
           <a href="downloads/datapacks/campfire_aura.zip" class="button button2">Download .zip</a>
         </div>
@@ -88,6 +111,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/flexible_enchants.zip" data-name="flexible_enchants" aria-label="Select Flexible Enchants">
+          </label>
           <h2>Flexible Enchants</h2>
           <a href="downloads/datapacks/flexible_enchants.zip" class="button button2">Download .zip</a>
         </div>
@@ -101,6 +127,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/furnace_quarry.zip" data-name="furnace_quarry" aria-label="Select Furnace Quarry">
+          </label>
           <h2>Furnace Quarry</h2>
           <a href="downloads/datapacks/furnace_quarry.zip" class="button button2">Download .zip</a>
         </div>
@@ -115,6 +144,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/mining_speed_boost.zip" data-name="mining_speed_boost" aria-label="Select Mining Speed Boost">
+          </label>
           <h2>Mining Speed Boost</h2>
           <a href="downloads/datapacks/mining_speed_boost.zip" class="button button2">Download .zip</a>
         </div>
@@ -124,6 +156,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/stonecutter_splitting.zip" data-name="stonecutter_splitting" aria-label="Select Stonecutter Splitting">
+          </label>
           <h2>Stonecutter Splitting</h2>
           <a href="downloads/datapacks/stonecutter_splitting.zip" class="button button2">Download .zip</a>
         </div>
@@ -138,6 +173,9 @@
 
       <section class="card pack-card">
         <div class="pack-head">
+          <label class="pack-check">
+            <input type="checkbox" class="pack-select" data-file="downloads/datapacks/villager_egg_recipe.zip" data-name="villager_egg_recipe" aria-label="Select Craftable Villager Spawn Egg">
+          </label>
           <h2>Craftable Villager Spawn Egg</h2>
           <a href="downloads/datapacks/villager_egg_recipe.zip" class="button button2">Download .zip</a>
         </div>
@@ -157,5 +195,7 @@
 
     <script src="styles/theme.js?v=1787099545"></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="styles/vendor/jszip.min.js?v=1787099545"></script>
+    <script src="styles/datapacks-bulk.js?v=1787099545"></script>
   </body>
 </html>
