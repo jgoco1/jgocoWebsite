@@ -150,6 +150,22 @@ h4{
   .links p{font-size:14px;}
 }
 
+/* Styling for the Datapacks page */
+.pack-head{
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+  gap:0.5rem 1rem; margin-bottom:0.6rem;
+}
+.pack-head h2{margin:0;}
+.pack-head .button{margin:0; white-space:nowrap;}
+.pack-card p{margin:0.5rem 0;}
+.pack-card ul{margin:0.5rem 0;}
+.pack-note{color:var(--chalk-dim); font-size:13.5px;}
+main code{
+  font-family:'Space Mono',monospace; font-size:0.9em;
+  background:var(--turf); border:1px solid var(--turf-line); border-radius:3px;
+  padding:0.1em 0.35em;
+}
+
 /* Styling for the Experience Section */
 .experience ul{list-style-type:none; padding:0;}
 .experience li{margin-bottom:20px;}

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Goco's Web Portfolio!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="styles/style.css?v=1787099545" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="theme-picker">
+      <label for="themeSelect">Theme</label>
+      <select id="themeSelect"></select>
+    </div>
+
+    <header>
+      <p class="eyebrow">Minecraft</p>
+      <h1>Datapacks</h1>
+      <nav class="menu">
+        <a href="index.html"><button class="button">Home</button></a>
+        <a href="coursework.html"><button class="button">Coursework</button></a>
+        <a href="web demo/atatsteroids_web_demo.html"><button class="button">Project</button></a>
+        <a href="/cfb/"><button class="button">CFB Pool</button></a>
+        <a href="datapacks.html"><button class="button active">Datapacks</button></a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="sub">Nine standalone Minecraft datapacks I've made, built for 1.21.x (data pack format matching Minecraft 26.2). Each one is self-contained — drop any combination into your world's <code>datapacks</code> folder and run <code>/reload</code>. No dependencies between them except where noted.</p>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>TNT / Campfire / Blaze / Concrete Recipe Tweaks</h2>
+          <a href="downloads/datapacks/tnt_campfire_pack.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Bundle of small recipe changes aimed at cutting down on tedious early/mid-game grinding:</p>
+        <ul>
+          <li><strong>TNT</strong> — now a shapeless recipe: 1 sand or red sand + 1 gunpowder (down from the vanilla checkerboard pattern of 4 sand + 5 gunpowder).</li>
+          <li><strong>Campfire</strong> — 1 log (any type) + 1 stick, instead of 3 sticks + 3 logs + coal/charcoal.</li>
+          <li><strong>Blaze rods</strong> — now yield 4 blaze powder instead of 2.</li>
+          <li><strong>Concrete powder</strong> — all 16 colors reduced to 1 sand + 1 gravel + 1 dye, yielding 16 concrete powder per craft (up from 4 sand + 4 gravel → 8).</li>
+        </ul>
+        <p class="pack-note">No new mechanics, just friendlier ratios on things that felt needlessly expensive.</p>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Fishing Treasure Boost</h2>
+          <a href="downloads/datapacks/fishing_treasure_boost.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Reworks the vanilla fishing loot table:</p>
+        <ul>
+          <li>Treasure catch rate raised to a flat <strong>50%</strong> (junk and fish odds adjusted to compensate).</li>
+          <li><strong>Luck of the Sea now scales how many items you pull up per reel</strong>, similar in spirit to how Fortune/Looting scale drop counts — a level 3 rod nets multiple items most casts, not just better odds on a single item.</li>
+        </ul>
+        <p class="pack-note">Fully vanilla-compatible — overrides the same loot table any other pack touching fishing would use, so it also affects the barrel pack below.</p>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Fishing Barrels</h2>
+          <a href="downloads/datapacks/fishing_barrels.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Passive fish farming, hands-off. Place a barrel with water on <strong>3 or more of its 6 sides</strong> (including above/below) and it will periodically roll the same fishing loot table and deposit the result directly into itself — junk, fish, and treasure included.</p>
+        <ul>
+          <li>Checks for water every game tick; if the water's ever removed, production just pauses rather than resetting.</li>
+          <li>Catch timing is randomized, averaging around 20 seconds per roll — matching the feel of actually fishing.</li>
+          <li>New barrels are detected automatically. Barrels already in the world before installing need a one-time <code>/function fishing_barrels:init</code>.</li>
+        </ul>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Campfire Aura</h2>
+          <a href="downloads/datapacks/campfire_aura.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Turns lit campfires and soul campfires into small support auras:</p>
+        <ul>
+          <li><strong>Regeneration</strong> to players within 8 blocks.</li>
+          <li><strong>2 damage per second</strong> to hostile mobs within 16 blocks (bypasses armor).</li>
+          <li>Place the campfire <strong>on top of a hay bale</strong> (vanilla's "signal fire" setup) and both radii double.</li>
+          <li>Extinguishing pauses the effect; breaking it removes it entirely — both detected automatically.</li>
+        </ul>
+        <p class="pack-note">New campfires are picked up the moment they're placed. Ones already in the world need a one-time <code>/function campfire_aura:init</code>.</p>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Flexible Enchants</h2>
+          <a href="downloads/datapacks/flexible_enchants.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Three changes to the enchanting/anvil system, aimed at "why can't I just have the build I want":</p>
+        <ul>
+          <li><strong>Removes several vanilla mutual-exclusivity restrictions</strong> — all four Protection types can coexist; Infinity + Mending; Depth Strider + Frost Walker; Sharpness/Smite/Bane of Arthropods and friends can combine; Multishot + Piercing. (Fortune/Silk Touch and Loyalty/Riptide/Channeling are left alone on purpose.)</li>
+          <li><strong>Drops the anvil cost of ~20 enchantments</strong> to the practical minimum — Mending, Infinity, and the Protection line no longer eat disproportionate levels.</li>
+          <li><strong>Eliminates the anvil's "prior work penalty"</strong> — the cost that doubles every anvil use, eventually hitting "Too Expensive!" — cleared automatically the moment you open an anvil.</li>
+        </ul>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Furnace Quarry</h2>
+          <a href="downloads/datapacks/furnace_quarry.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Passive stone/ore generation using nothing but placement and plumbing — no mining required. Place a <strong>blast furnace</strong> (or a regular furnace, for a weaker version) between a lava source and a water source — opposite sides along any axis — with a chest, barrel, hopper, trapped chest, or copper chest adjacent to it.</p>
+        <ul>
+          <li><strong>Loot odds scale with the furnace's Y-level</strong>, mimicking real ore distribution: diamond, redstone, and gold get more common the deeper you go, iron peaks around Y16, copper/coal favor the surface.</li>
+          <li><strong>Blast furnace</strong>: full ore table, produces roughly every 15–30 seconds.</li>
+          <li><strong>Regular furnace</strong>: stone/coal/copper/iron only, about a 1.5% chance each second — a background trickle.</li>
+          <li>Same placement-detection pattern as the other tracked-block packs — needs a one-time <code>/function furnace_quarry:init</code> for pre-existing setups.</li>
+        </ul>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Mining Speed Boost</h2>
+          <a href="downloads/datapacks/mining_speed_boost.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>One flat, permanent buff: <strong>+11 mining speed</strong> added to every player's <code>mining_efficiency</code> attribute, applied automatically the first time they're seen in the world.</p>
+        <p class="pack-note">Calibrated so an Efficiency V diamond pickaxe instantly mines stone (the vanilla threshold is a mining-speed value of 45; a fully-enchanted diamond pickaxe alone caps out at 34 — this closes that exact gap). A flat bonus rather than gear-scaled, so it speeds up mining across the board, not just at max enchant level.</p>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Stonecutter Splitting</h2>
+          <a href="downloads/datapacks/stonecutter_splitting.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Three stonecutter recipes for turning "too much of one thing" into "useful amounts of something else":</p>
+        <ul>
+          <li>1 Stone → 2 Cobblestone</li>
+          <li>1 Cobblestone → 2 Gravel</li>
+          <li>1 Gravel → 2 Sand</li>
+        </ul>
+        <p class="pack-note">Useful for a sand/gravel-heavy build (concrete, TNT, etc.) without a trip back to a beach or desert.</p>
+      </section>
+
+      <section class="card pack-card">
+        <div class="pack-head">
+          <h2>Craftable Villager Spawn Egg</h2>
+          <a href="downloads/datapacks/villager_egg_recipe.zip" class="button button2">Download .zip</a>
+        </div>
+        <p>Adds a shaped crafting recipe for a Villager Spawn Egg — normally a creative-only item: 4 Emeralds surrounding any Bed. Thematically it lines up with vanilla villager mechanics (emeralds as currency, a bed as the thing a villager actually needs to move in) rather than being an arbitrary cost.</p>
+        <p class="pack-note">Since this is a new recipe rather than an override of an existing one, it won't show up highlighted in the in-game recipe book automatically — it crafts correctly regardless, but there's no automatic "unlock" notification.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> John Goco. All rights reserved.</p>
+      <p>
+        <a href="mailto:johnpatrickgoco01@gmail.com">Email Me</a> |
+        <a href="https://www.linkedin.com/in/john-goco-030526229" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/jgoco1" target="_blank">GitHub</a>
+      </p>
+    </footer>
+
+    <script src="styles/theme.js?v=1787099545"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
