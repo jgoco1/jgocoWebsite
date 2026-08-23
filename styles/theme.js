@@ -92,6 +92,16 @@ const THEMES = {
       '--brick':'#c9604d', '--green-ok':'#5fae7c',
       '--accent-text':'#1f0a00', '--accent-hover':'#ff9142'
     }
+  },
+  aurum: {
+    label: 'Aurum',
+    vars: {
+      '--turf-dark':'#050d1c', '--turf':'#0c2340', '--turf-panel':'#123055', '--turf-line':'#1f4a7a',
+      '--chalk':'#f2eee1', '--chalk-dim':'#a9b7c9',
+      '--gold':'#c99700', '--gold-dim':'#7a5c00',
+      '--brick':'#c9604d', '--green-ok':'#5fae7c',
+      '--accent-text':'#241a04', '--accent-hover':'#e0b433'
+    }
   }
 };
 const DEFAULT_THEME = 'midnight';
