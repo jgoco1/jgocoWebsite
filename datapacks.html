@@ -70,7 +70,7 @@
         <p>Reworks the vanilla fishing loot table:</p>
         <ul>
           <li>Treasure catch rate raised to a flat <strong>50%</strong> (junk and fish odds adjusted to compensate).</li>
-          <li><strong>Luck of the Sea now scales how many items you pull up per reel</strong>, similar in spirit to how Fortune/Looting scale drop counts — a level 3 rod nets multiple items most casts, not just better odds on a single item.</li>
+          <li><strong>Luck of the Sea now scales how many items you pull up per reel</strong>, similar in spirit to how Fortune/Looting scale drop counts. It works by stacking several "bonus catch" rolls on top of the base one, each gated behind the enchantment's actual level on your rod — so a level 3 rod nets you multiple items most casts, not just better odds on a single item.</li>
         </ul>
         <p class="pack-note">Fully vanilla-compatible — overrides the same loot table any other pack touching fishing would use, so it also affects the barrel pack below.</p>
       </section>
@@ -83,11 +83,11 @@
           <h2>Fishing Barrels</h2>
           <a href="downloads/datapacks/fishing_barrels.zip" class="button button2">Download .zip</a>
         </div>
-        <p>Passive fish farming, hands-off. Place a barrel with water on <strong>3 or more of its 6 sides</strong> (including above/below) and it will periodically roll the same fishing loot table and deposit the result directly into itself — junk, fish, and treasure included.</p>
+        <p>Passive fish farming, hands-off. Place a barrel touching water and it'll periodically roll the same fishing loot table above and deposit the result directly into itself — junk, fish, and treasure included.</p>
         <ul>
-          <li>Checks for water every game tick; if the water's ever removed, production just pauses rather than resetting.</li>
-          <li>Catch timing is randomized, averaging around 20 seconds per roll — matching the feel of actually fishing.</li>
-          <li>New barrels are detected automatically. Barrels already in the world before installing need a one-time <code>/function fishing_barrels:init</code>.</li>
+          <li><strong>Only needs 1 adjacent water block (flowing or source) to activate at all</strong> — and the more of its 6 sides touch water, the faster it produces. A single water block behaves like the old baseline (~10–30s per catch); fully submerged on all sides cuts that down to roughly 1.7–5s.</li>
+          <li>Water is re-measured every cycle, so knocking a side out or adding more adjusts the pace immediately rather than needing to be reset.</li>
+          <li>New barrels are detected automatically the moment they're placed. Barrels already in the world before installing need a one-time <code>/function fishing_barrels:init</code> to activate (a reminder prints when the pack loads).</li>
         </ul>
       </section>
 
@@ -101,9 +101,10 @@
         </div>
         <p>Turns lit campfires and soul campfires into small support auras:</p>
         <ul>
-          <li><strong>Regeneration</strong> to players within 8 blocks.</li>
-          <li><strong>2 damage per second</strong> to hostile mobs within 16 blocks (bypasses armor).</li>
-          <li>Place the campfire <strong>on top of a hay bale</strong> (vanilla's "signal fire" setup) and both radii double.</li>
+          <li><strong>Regeneration</strong> to players and allied mobs (villagers, wandering traders, allays) within 8 blocks.</li>
+          <li><strong>Iron golems get a wider radius — 16 blocks</strong> — on the theory that a golem guarding a base benefits more from being reachable at range than from precisely matching the player radius.</li>
+          <li><strong>2 damage per second</strong> to hostile mobs within 16 blocks (uses a damage type that bypasses armor).</li>
+          <li>Place the campfire <strong>on top of a hay bale</strong> (the same setup that triggers vanilla's tall "signal fire" smoke) and all radii double (16/32/32).</li>
           <li>Extinguishing pauses the effect; breaking it removes it entirely — both detected automatically.</li>
         </ul>
         <p class="pack-note">New campfires are picked up the moment they're placed. Ones already in the world need a one-time <code>/function campfire_aura:init</code>.</p>
@@ -119,10 +120,11 @@
         </div>
         <p>Three changes to the enchanting/anvil system, aimed at "why can't I just have the build I want":</p>
         <ul>
-          <li><strong>Removes several vanilla mutual-exclusivity restrictions</strong> — all four Protection types can coexist; Infinity + Mending; Depth Strider + Frost Walker; Sharpness/Smite/Bane of Arthropods and friends can combine; Multishot + Piercing. (Fortune/Silk Touch and Loyalty/Riptide/Channeling are left alone on purpose.)</li>
-          <li><strong>Drops the anvil cost of ~20 enchantments</strong> to the practical minimum — Mending, Infinity, and the Protection line no longer eat disproportionate levels.</li>
-          <li><strong>Eliminates the anvil's "prior work penalty"</strong> — the cost that doubles every anvil use, eventually hitting "Too Expensive!" — cleared automatically the moment you open an anvil.</li>
+          <li><strong>Removes several vanilla mutual-exclusivity restrictions</strong> — Protection / Fire Protection / Blast Protection / Projectile Protection can all coexist on one armor piece; Infinity + Mending on the same bow; Depth Strider + Frost Walker on the same boots; Density/Breach on a mace; Multishot + Piercing on a crossbow. (Fortune/Silk Touch, Loyalty/Riptide/Channeling, and the Sharpness/Smite/Bane of Arthropods family are left alone on purpose — see note below.)</li>
+          <li><strong>Drops the anvil cost of ~20 enchantments</strong> to the practical minimum — Mending, Infinity, the Protection line, Unbreaking, and several others no longer eat disproportionate levels to apply.</li>
+          <li><strong>Eliminates the anvil's "prior work penalty"</strong> — the cost that normally doubles every time an item's touched an anvil, eventually hitting the "Too Expensive!" wall. This pack clears that penalty automatically the moment you open an anvil, so repeated combining stays cheap indefinitely.</li>
         </ul>
+        <p class="pack-note">Note: a handful of enchantments (Efficiency, Aqua Affinity, Depth Strider, Respiration, Sweeping Edge, Swift Sneak, Soul Speed, Sharpness, Smite, Bane of Arthropods, and a few others) are intentionally left at vanilla cost — some reference parts of the game's internals I couldn't fully verify for this version, so they were left untouched rather than risk breaking world loading.</p>
       </section>
 
       <section class="card pack-card">
@@ -133,12 +135,12 @@
           <h2>Furnace Quarry</h2>
           <a href="downloads/datapacks/furnace_quarry.zip" class="button button2">Download .zip</a>
         </div>
-        <p>Passive stone/ore generation using nothing but placement and plumbing — no mining required. Place a <strong>blast furnace</strong> (or a regular furnace, for a weaker version) between a lava source and a water source — opposite sides along any axis — with a chest, barrel, hopper, trapped chest, or copper chest adjacent to it.</p>
+        <p>Passive stone/ore generation using nothing but placement and plumbing — no mining required. Place a <strong>blast furnace</strong> (or a regular <strong>furnace</strong>, for a weaker version) so that it sits between lava and water — a source block of each, on opposite sides along any axis — with a <strong>chest, barrel, hopper, trapped chest, or copper chest</strong> adjacent to it. It'll periodically deposit stone, deepslate, andesite/diorite/granite, or ores directly into that container.</p>
         <ul>
-          <li><strong>Loot odds scale with the furnace's Y-level</strong>, mimicking real ore distribution: diamond, redstone, and gold get more common the deeper you go, iron peaks around Y16, copper/coal favor the surface.</li>
+          <li><strong>Loot odds scale with the furnace's actual Y-level</strong>, mimicking real ore distribution: diamond, redstone, and gold get much more common the deeper you go, iron peaks around Y16, and copper/coal are most common near the surface. Every material is still possible at every depth, just weighted differently.</li>
           <li><strong>Blast furnace</strong>: full ore table, produces roughly every 15–30 seconds.</li>
-          <li><strong>Regular furnace</strong>: stone/coal/copper/iron only, about a 1.5% chance each second — a background trickle.</li>
-          <li>Same placement-detection pattern as the other tracked-block packs — needs a one-time <code>/function furnace_quarry:init</code> for pre-existing setups.</li>
+          <li><strong>Regular furnace</strong>: restricted to stone/coal/copper/iron only, and far slower — about a 1.5% chance each second, so it's a background trickle rather than a real production line.</li>
+          <li>Same placement-detection and one-time <code>/function furnace_quarry:init</code> pattern as the other tracked-block packs above.</li>
         </ul>
       </section>
 
@@ -152,6 +154,7 @@
         </div>
         <p>One flat, permanent buff: <strong>+11 mining speed</strong> added to every player's <code>mining_efficiency</code> attribute, applied automatically the first time they're seen in the world.</p>
         <p class="pack-note">Calibrated so an Efficiency V diamond pickaxe instantly mines stone (the vanilla threshold is a mining-speed value of 45; a fully-enchanted diamond pickaxe alone caps out at 34 — this closes that exact gap). A flat bonus rather than gear-scaled, so it speeds up mining across the board, not just at max enchant level.</p>
+        <p class="pack-note">The bonus now survives death — it's re-verified once a second and silently reapplied if it's ever missing, working around a Minecraft quirk where custom attribute modifiers (unlike most other player data) don't persist through respawn.</p>
       </section>
 
       <section class="card pack-card">
@@ -169,6 +172,7 @@
           <li>1 Gravel → 2 Sand</li>
         </ul>
         <p class="pack-note">Useful for a sand/gravel-heavy build (concrete, TNT, etc.) without a trip back to a beach or desert.</p>
+        <p class="pack-note">Includes an unlock advancement so these actually show up in the stonecutter's recipe list — unlike a crafting table, the stonecutter has no "manually arrange items" fallback, so a new recipe needs to be explicitly unlocked to be usable at all, not just to appear highlighted.</p>
       </section>
 
       <section class="card pack-card">
@@ -180,7 +184,7 @@
           <a href="downloads/datapacks/villager_egg_recipe.zip" class="button button2">Download .zip</a>
         </div>
         <p>Adds a shaped crafting recipe for a Villager Spawn Egg — normally a creative-only item: 4 Emeralds surrounding any Bed. Thematically it lines up with vanilla villager mechanics (emeralds as currency, a bed as the thing a villager actually needs to move in) rather than being an arbitrary cost.</p>
-        <p class="pack-note">Since this is a new recipe rather than an override of an existing one, it won't show up highlighted in the in-game recipe book automatically — it crafts correctly regardless, but there's no automatic "unlock" notification.</p>
+        <p class="pack-note">Since this is a new recipe rather than an override of an existing one, it won't show up highlighted in the in-game recipe book automatically — it crafts correctly regardless, but there's no automatic "unlock" notification. (This is different from the stonecutter recipes above — crafting-table recipes work without an unlock advancement, stonecutter recipes don't.)</p>
       </section>
     </main>
 
